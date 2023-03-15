@@ -8,25 +8,33 @@ const promptUser = async () => {
 
   const gridSize = await new Promise((resolve) => {
     rl.question('Qual o tamanho da malha? ', (answer) => {
-      resolve(answer.replace(/ /g, '').split(''));
+      const gridAnswer = answer.replace(/ /g, '').split('')
+      const [x, y] = gridAnswer
+      const gridSize = { x, y }
+      resolve(gridSize)
     });
   });
 
-  const initialPosition = await new Promise((resolve) => {
+  const roverPosition = await new Promise((resolve) => {
     rl.question('Qual a posição inicial do Rover? ', (answer) => {
-      resolve(answer.replace(/ /g, '').split(''));
+      const initialPositionAnswer = answer.replace(/ /g, '').split('')
+      const [x, y, orientation] = initialPositionAnswer
+      const roverPosition = { x, y, orientation }
+      resolve(roverPosition);
     });
   });
 
   const instructions = await new Promise((resolve) => {
     rl.question('Quais as instruções de movimento? ', (answer) => {
-      resolve(answer.replace(/ /g, '').split(''));
+      resolve(answer);
     });
   });
 
   rl.close();
 
-  return [gridSize, initialPosition, instructions];
+  const answers = { gridSize, roverPosition, instructions }
+
+  return answers
 };
 
-export default promptUser;
+export default promptUser
