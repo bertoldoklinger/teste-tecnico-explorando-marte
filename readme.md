@@ -30,6 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - NodeJs
 - Core Module readline
 - Eslint & Prettier (Airbnb Preset)
+- GIT
 
 ## ⚙️ Funcionalidades
 1. Definir o tamanho da malha
