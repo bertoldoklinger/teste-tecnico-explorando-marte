@@ -77,9 +77,7 @@ function moveRover(roverPosition, instructions) {
   }
 }
 
-for (let i = 0; i < roverPositions.length; i++) {
-  const rover = roverPositions[i];
-  const instructions = roverInstructions[i];
-  moveRover(rover, instructions);
+roverPositions.forEach((rover, i) => {
+  moveRover(rover, roverInstructions[i]);
   console.log(rover.x, rover.y, rover.orientation);
-}
+});
