@@ -47,11 +47,9 @@ const promptUser = async () => {
       break;
     }
   }
-
   rl.close();
 
   const answers = { gridSize, roverPositions, roverInstructions };
-  console.log(gridSize, roverPositions, roverInstructions);
   return answers;
 }
 
