@@ -1,5 +1,5 @@
 # Teste Técnico - Explorando Marte
-
+![Imagem tentáculo digital](https://media.licdn.com/dms/image/C4E16AQF-mYOg9KRlEQ/profile-displaybackgroundimage-shrink_350_1400/0/1608735972802?e=1684368000&v=beta&t=cQYEOJttjFKv_oM4HSO739971MqjsYtTSLKOrTg9Npk)
 
 
 # 💻 Projeto
