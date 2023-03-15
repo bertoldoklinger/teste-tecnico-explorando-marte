@@ -35,5 +35,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 1. Definir o tamanho da malha
 2. Definir a posição inicial da sonda/sondas
 3. Adicionar comandos para movimentar a sonda/sondas
+4. Validação com Erro caso input seja enviado vazio
+
+OBS: Inputs pode ser digitados em lowerCase ou Uppercase, com espaço ou sem espaço.
 ## 🚀 Desenvolvedor
 Bertoldo Klinger (https://github.com/bertoldoklinger)

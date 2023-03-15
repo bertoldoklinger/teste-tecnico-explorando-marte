@@ -8,6 +8,9 @@ const promptUser = async () => {
 
   const gridSize = await new Promise((resolve) => {
     rl.question('Qual o tamanho da malha? ', (answer) => {
+      if (!answer) {
+        throw new Error('Digite um tamanho válido');
+      }
       const gridAnswer = answer.replace(/ /g, '').split('')
       const [x, y] = gridAnswer
       const gridSize = { x, y }
@@ -21,6 +24,9 @@ const promptUser = async () => {
   while (true) {
     const roverPosition = await new Promise((resolve) => {
       rl.question('Qual a posição inicial do Rover? ', (answer) => {
+        if (!answer) {
+          throw new Error('Digite uma posição válida');
+        }
         const initialPositionAnswer = answer.replace(/ /g, '').toUpperCase().split('')
         const [x, y, orientation] = initialPositionAnswer
         const roverPosition = { x, y, orientation }
@@ -30,6 +36,9 @@ const promptUser = async () => {
 
     const instructions = await new Promise((resolve) => {
       rl.question('Quais as instruções de movimento? ', (answer) => {
+        if (!answer) {
+          throw new Error('Digite uma instrução válida');
+        }
         resolve(answer.toUpperCase());
       });
     });
