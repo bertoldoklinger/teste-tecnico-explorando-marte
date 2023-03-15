@@ -4,8 +4,6 @@ const answers = await promptUser();
 
 const { gridSize, roverPositions, roverInstructions } = answers;
 
-console.log(gridSize, roverPositions, roverInstructions);
-
 function turnLeft(roverPosition) {
   switch (roverPosition.orientation) {
     case 'N':
