@@ -1,8 +1,9 @@
 import { promptUser } from './user-prompts.js';
 
-await promptUser()
+const answers = await promptUser()
 
 const { gridSize, roverPosition, instructions } = answers
+
 console.log(gridSize, roverPosition, instructions)
 
 function turnLeft(orientation) {

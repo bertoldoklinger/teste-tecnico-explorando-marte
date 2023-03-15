@@ -1,14 +1,15 @@
 {
   "name": "teste-tecnico-explorando-marte",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Teste técnico para a empresa Tentáculo.Digital",
+  "main": "rover.js",
   "type":"module",
   "scripts": {
+    "start": "node src/rover.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bertoldo Klinger",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.36.0",
