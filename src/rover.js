@@ -1,13 +1,13 @@
-import { promptUser } from './user-prompts.js';
+import { promptUser } from './prompt-user.js';
 
-const answers = await promptUser()
+const answers = await promptUser();
 
-const { gridSize, roverPosition, instructions } = answers
+const { gridSize, roverPositions, roverInstructions } = answers;
 
-console.log(gridSize, roverPosition, instructions)
+console.log(gridSize, roverPositions, roverInstructions);
 
-function turnLeft(orientation) {
-  switch (orientation) {
+function turnLeft(roverPosition) {
+  switch (roverPosition.orientation) {
     case 'N':
       roverPosition.orientation = 'W';
       break;
@@ -23,8 +23,8 @@ function turnLeft(orientation) {
   }
 }
 
-function turnRight(orientation) {
-  switch (orientation) {
+function turnRight(roverPosition) {
+  switch (roverPosition.orientation) {
     case 'N':
       roverPosition.orientation = 'E';
       break;
@@ -36,53 +36,50 @@ function turnRight(orientation) {
       break;
     case 'W':
       roverPosition.orientation = 'N';
-      break;
-  }
-}
-
-function turnMiddle(orientation) {
-  switch (orientation) {
-    case 'N':
-      if (roverPosition.y < gridSize.y) {
-        roverPosition.y++;
-      }
-      break;
-    case 'S':
-      if (roverPosition.y > 0) {
-        roverPosition.y--;
-      }
-      break;
-    case 'E':
-      if (roverPosition.x < gridSize.x) {
-        roverPosition.x++;
-      }
-      break;
-    case 'W':
-      if (roverPosition.x > 0) {
-        roverPosition.x--;
-      }
       break;
   }
 }
 
 function moveRover(roverPosition, instructions) {
   for (const instruction of instructions) {
-
-    const isLeftInstruction = instruction === 'L'
-    const isRightInstruction = instruction === 'R'
-    const isMiddleInstruction = instruction === 'M'
+    const isLeftInstruction = instruction === 'L';
+    const isRightInstruction = instruction === 'R';
+    const isMiddleInstruction = instruction === 'M';
 
     if (isLeftInstruction) {
-      turnLeft(roverPosition.orientation)
+      turnLeft(roverPosition);
     } else if (isRightInstruction) {
-      turnRight(roverPosition.orientation)
-    }
-    else if (isMiddleInstruction) {
-      turnMiddle(roverPosition.orientation)
+      turnRight(roverPosition);
+    } else if (isMiddleInstruction) {
+      switch (roverPosition.orientation) {
+        case 'N':
+          if (roverPosition.y < gridSize.y) {
+            roverPosition.y++;
+          }
+          break;
+        case 'S':
+          if (roverPosition.y > 0) {
+            roverPosition.y--;
+          }
+          break;
+        case 'E':
+          if (roverPosition.x < gridSize.x) {
+            roverPosition.x++;
+          }
+          break;
+        case 'W':
+          if (roverPosition.x > 0) {
+            roverPosition.x--;
+          }
+          break;
+      }
     }
   }
 }
 
-
-moveRover(roverPosition, instructions);
-console.log(`A posição final da sonda é ${roverPosition.x} ${roverPosition.y} ${roverPosition.orientation}`);
+for (let i = 0; i < roverPositions.length; i++) {
+  const rover = roverPositions[i];
+  const instructions = roverInstructions[i];
+  moveRover(rover, instructions);
+  console.log(rover.x, rover.y, rover.orientation);
+}
