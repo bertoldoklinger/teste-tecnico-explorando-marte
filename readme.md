@@ -1,20 +1,20 @@
-# Teste Técnico -> Explorando Marte
+# Teste Técnico - Explorando Marte
 
 
 
-## 💻 Projeto
+# 💻 Projeto
 
 O Explorando Marte é uma aplicação que simula um pouso de sondas(rovers) na superfície de Marte, onde é possível, na CLI, definir a posição inicial da sonda/sondas, adicionar comandos para movimentar a sonda/sondas na superficie, com tamanho escolhido também(*Tamanho da malha*).
 
 ---
-# Inicio Rápido 🚀
+# 🚀 Inicio Rápido 
 ### Para clonar o repositório,digite no terminal :
 
 ```
 git clone https://github.com/bertoldoklinger/teste-tecnico-explorando-marte.git
 ```
 
-### Para iniciar o app na CLI :
+Para iniciar o aplicativo no CLI, vá para o diretório do projeto e execute o seguinte comando:
 
 ```
 npm start
@@ -22,7 +22,7 @@ npm start
 
 ---
 
-## Tecnologias / Stack utilizada ⚙️ :
+## 🛠️ Tecnologias / Stack utilizada  :
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -31,3 +31,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Core Module readline
 - Eslint & Prettier (Airbnb Preset)
 
+## ⚙️ Funcionalidades
+1. Definir o tamanho da malha
+2. Definir a posição inicial da sonda/sondas
+3. Adicionar comandos para movimentar a sonda/sondas
+## 🚀 Desenvolvedor
+Bertoldo Klinger (https://github.com/bertoldoklinger)
