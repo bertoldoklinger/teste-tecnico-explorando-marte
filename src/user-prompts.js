@@ -15,24 +15,44 @@ const promptUser = async () => {
     });
   });
 
-  const roverPosition = await new Promise((resolve) => {
-    rl.question('Qual a posição inicial do Rover? ', (answer) => {
-      const initialPositionAnswer = answer.replace(/ /g, '').toUpperCase().split('')
-      const [x, y, orientation] = initialPositionAnswer
-      const roverPosition = { x, y, orientation }
-      resolve(roverPosition);
-    });
-  });
+  const roverPositions = [];
+  const roverInstructions = [];
 
-  const instructions = await new Promise((resolve) => {
-    rl.question('Quais as instruções de movimento? ', (answer) => {
-      resolve(answer.toUpperCase());
+  while (true) {
+    const roverPosition = await new Promise((resolve) => {
+      rl.question('Qual a posição inicial do Rover? ', (answer) => {
+        const initialPositionAnswer = answer.replace(/ /g, '').toUpperCase().split('')
+        const [x, y, orientation] = initialPositionAnswer
+        const roverPosition = { x, y, orientation }
+        resolve(roverPosition);
+      });
     });
-  });
+
+    const instructions = await new Promise((resolve) => {
+      rl.question('Quais as instruções de movimento? ', (answer) => {
+        resolve(answer.toUpperCase());
+      });
+    });
+
+    roverPositions.push(roverPosition);
+    roverInstructions.push(instructions);
+
+    const moreRovers = await new Promise((resolve) => {
+      rl.question('Adicionar mais uma posição e instruções do Rover? (s/n) ', (answer) => {
+        resolve(answer.toLowerCase() === 's');
+      });
+    });
+
+    if (!moreRovers) {
+      break;
+    }
+  }
+
   rl.close();
-  const answers = { gridSize, roverPosition, instructions }
 
-  return answers
+  const answers = { gridSize, roverPositions, roverInstructions };
+  console.log(gridSize, roverPositions, roverInstructions);
+  return answers;
 }
 
 export { promptUser };
