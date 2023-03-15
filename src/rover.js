@@ -1,8 +1,9 @@
-import promptUser from "./prompt-user.js";
+import { promptUser } from './user-prompts.js';
 
-const answers = await promptUser()
+await promptUser()
 
 const { gridSize, roverPosition, instructions } = answers
+console.log(gridSize, roverPosition, instructions)
 
 function turnLeft(orientation) {
   switch (orientation) {
@@ -64,8 +65,7 @@ function turnMiddle(orientation) {
 }
 
 function moveRover(roverPosition, instructions) {
-  for (let i = 0; i < instructions.length; i++) {
-    const instruction = instructions[i];
+  for (const instruction of instructions) {
 
     const isLeftInstruction = instruction === 'L'
     const isRightInstruction = instruction === 'R'

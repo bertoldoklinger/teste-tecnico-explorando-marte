@@ -29,12 +29,11 @@ const promptUser = async () => {
       resolve(answer);
     });
   });
-
   rl.close();
-
   const answers = { gridSize, roverPosition, instructions }
 
   return answers
-};
+}
 
-export default promptUser
+export { promptUser };
+
