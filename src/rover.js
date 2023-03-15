@@ -85,4 +85,4 @@ function moveRover(roverPosition, instructions) {
 
 
 moveRover(roverPosition, instructions);
-console.log(`A posição final da sonda é roverPosition.x, roverPosition.y, roverPosition.orientation`);
+console.log(`A posição final da sonda é ${roverPosition.x} ${roverPosition.y} ${roverPosition.orientation}`);
