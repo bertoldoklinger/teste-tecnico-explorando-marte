@@ -17,7 +17,7 @@ const promptUser = async () => {
 
   const roverPosition = await new Promise((resolve) => {
     rl.question('Qual a posição inicial do Rover? ', (answer) => {
-      const initialPositionAnswer = answer.replace(/ /g, '').split('')
+      const initialPositionAnswer = answer.replace(/ /g, '').toUpperCase().split('')
       const [x, y, orientation] = initialPositionAnswer
       const roverPosition = { x, y, orientation }
       resolve(roverPosition);
@@ -26,7 +26,7 @@ const promptUser = async () => {
 
   const instructions = await new Promise((resolve) => {
     rl.question('Quais as instruções de movimento? ', (answer) => {
-      resolve(answer);
+      resolve(answer.toUpperCase());
     });
   });
   rl.close();
