@@ -1,4 +1,4 @@
-import { promptUser } from './user-prompts.js';
+import { promptUser } from './promptUser.js';
 
 const answers = await promptUser();
 
