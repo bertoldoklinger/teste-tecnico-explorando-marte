@@ -4,7 +4,7 @@
 
 # 💻 Projeto
 
-O Explorando Marte é uma aplicação que simula um pouso de sondas(rovers) na superfície de Marte, onde é possível, na CLI, definir a posição inicial da sonda/sondas, adicionar comandos para movimentar a sonda/sondas na superficie, com tamanho escolhido também(*Tamanho da malha*).
+O Explorando Marte é uma aplicação que simula um pouso de sondas(rovers) na superfície de Marte, onde é possível, na CLI, Inicialmente definir o tamanho da malha, e admite-se até a inserção de até 2 rovers colocando a sua posição inicial, comandos para movimentar e caso algo seja enviado vazio enviará mensagem de erro.
 
 ---
 # 🚀 Inicio Rápido 
@@ -26,7 +26,7 @@ npm start
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- JavaScript (ES Modules, Destructuring Assignment, loops, Promises, Async/Await, Arrow Functions, Conditional Statements, NPM) 
+- JavaScript (ES Modules, Destructuring Assignment, loops, Promises, Async/Await, Arrow Functions, Conditional Statements, Regular Expressions, NPM) 
 - NodeJs
 - Core Module readline
 - Eslint & Prettier (Airbnb Preset)
